@@ -60,7 +60,7 @@ public class Downloader
 
 			// opens an output stream to save into file
 			
-			File downloading = saveFilePath;
+			File downloading = new File(saveFilePath);
 			
 			// Only downloads if file doesn't exists
 			if(!downloading.exists())
