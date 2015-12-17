@@ -51,7 +51,7 @@ public class Cl0udCore
 	
 	public void testJson(File put) throws IOException, ParseException
 	{
-		JSONUtils.updateJson(put, "testname");
+		JSONUtils.updateRecordJson(put, "testname");
 
 	}
 }

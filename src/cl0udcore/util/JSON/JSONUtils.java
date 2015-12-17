@@ -61,15 +61,21 @@ public class JSONUtils
 		return bytes;
 	}
 
-	public static void updateJson(File MusicDir, String RecordName) throws IOException, ParseException
+	public static void updateRecordJson(File AssetsDir, String RecordName) throws IOException, ParseException
 	{
 
-		File soundJson = new File(MusicDir, "sounds.json");
+		File soundJson = new File(AssetsDir, "sounds.json");
 		String json = readFile(soundJson);
 		JSONParser jp = new JSONParser();
+		String cat = "category";
+		String snd = "sounds";
 
 		JSONObject root = (JSONObject) jp.parse(json);
-		root.put(RecordName, "");
-
+		root.put(RecordName, "{");
+		root.put(cat, "record");
+		root.put(snd, "[".toString());
+		
+		JSONArray sounds = (JSONArray) root.get("sounds");
+		
 	}
 }
